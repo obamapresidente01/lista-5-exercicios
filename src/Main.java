@@ -105,20 +105,22 @@ public class Main {
 
         //Exercicio 6
         Scanner scanner = new Scanner(System.in);
-        int[] vetor =  new int[8];
-        boolean encontrado = false;
+        int[] numeros = {3, 7, 12, 18, 25, 30, 42, 55};
+        System.out.println("Tente advinhar um numero que esta no vetor: ");
+        int tentativa = scanner.nextInt();
 
-        for(int i = 0; i < vetor.length; i++){
-            System.out.println("Digite o numero: " + (i + 1));
-            vetor[i] = scanner.nextInt();
-        }
-        for(int i = 0; i < vetor.length; i++){
-            if(vetor[i] == valorBusca){
+        boolean encontrado = false;
+        for (int num : numeros) {
+            if (num == tentativa) {
                 encontrado = true;
+                break;
             }
         }
-        if(encontrado){
-            System.out.println("Vetor encontrado" + vetor);
+        if (encontrado) {
+            System.out.println("Parabens! o numero " + tentativa + "esta no vetor.");
         } else {
+            System.out.println("Que pena! o numero " + tentativa + " nao esta no vetor." );
         }
+        scanner.close();
     }
+}
